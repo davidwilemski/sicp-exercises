@@ -1,0 +1,37 @@
+; Exercise 1.1 
+; What is the result printed by the interpreter in 
+; response to each expression? Assume that the sequence 
+; is to be evaluated in the order in which it is presented.
+10
+; answer: 10
+(+ 5 3 4)
+; answer: 12
+(- 9 1)
+; answer: 8
+(/ 6 2)
+; answer: 3
+(+ (* 2 4) (- 4 6))
+; answer: 6
+(define a 3)
+; answer: no output
+(define b (+ a 1))
+; answer: no output
+(+ a b (* a b))
+; answer: 19
+(= a b)
+; answer: false (#f ?)
+(if (and (> b a) (< b (* a b)))
+    b
+    a)
+; answer: b (4)
+(cond ((= a 4) 6)
+      ((= b 4) (+ 6 7 a))
+      (else 25))
+; answer: 16
+(+ 2 (if (> b a) b a))
+; answer: (+ 2 b) -> (+ 2 4) -> 6
+(* (cond ((> a b) a)
+         ((< a b) b)
+         (else -1))
+   (+ a 1))
+; answer: (* b (+ a 1)) -> (* b 4) -> (* 4 4) -> 16
