@@ -10,7 +10,15 @@
          (sum-squares x z))
         ((and (>= y x) (>= z x)) 
          (sum-squares y z))
-        ((and (>= z y) (>= x y)) 
-         (sum-squares z x))
         (else 
          (sum-squares x y)))) ; they're all equal
+
+; testing:
+;> (sum-max-squares 0 1 1)
+;2
+;> (sum-max-squares 1 1 0)
+;2
+;> (sum-max-squares 1 0 1)
+;2
+;> (sum-max-squares 1 1 1)
+;2
